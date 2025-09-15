@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenCart — Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🌿 <span>GreenCart</span></a>
+      <button id="mobileMenuToggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav id="mainNav" class="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <h1>Contact us</h1>
+    <p>Have a question about a plant or an order? Drop us a message!</p>
+
+    <form id="contactForm" class="contact-form" novalidate>
+      <label>
+        Name
+        <input type="text" id="contactName" required minlength="2" />
+      </label>
+
+      <label>
+        Email
+        <input type="email" id="contactEmail" required />
+      </label>
+
+      <label>
+        Message
+        <textarea id="contactMessage" rows="6" required minlength="10"></textarea>
+      </label>
+
+      <div>
+        <button class="btn primary" type="submit">Send message</button>
+        <button class="btn ghost" type="reset">Reset</button>
+      </div>
+
+      <p id="contactMsg" class="muted"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div><h4>GreenCart</h4><p>Plant lovers, plant happiness.</p></div>
+        <div><h4>Links</h4><a href="index.html">Home</a><br/><a href="shop.html">Shop</a></div>
+        <div><h4>Subscribe</h4><form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="you@plantmail.com" required /><button class="btn small">Subscribe</button><p id="newsletterMsg" class="muted"></p></form></div>
+      </div>
+      <p class="muted">© <span id="year"></span> GreenCart</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        const result = validateContactForm({ name, email, message });
+        const msgEl = document.getElementById('contactMsg');
+        if (!result.valid) {
+          msgEl.textContent = 'Please fix: ' + result.errors.join(', ');
+          msgEl.style.color = '#b00020';
+        } else {
+          msgEl.textContent = 'Thanks! Your message has been sent (demo).';
+          msgEl.style.color = '#2a7a2a';
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

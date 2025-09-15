@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenCart — Shop</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🌿 <span>GreenCart</span></a>
+      <button id="mobileMenuToggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav id="mainNav" class="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls-row">
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search plants..." />
+      </div>
+
+      <div class="filters">
+        <select id="categorySelect" aria-label="Filter by category">
+          <option value="">All categories</option>
+        </select>
+
+        <select id="sortSelect" aria-label="Sort by">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select>
+      </div>
+    </section>
+
+    <section>
+      <div id="productsGrid" class="grid product-grid">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div><h4>GreenCart</h4><p>Plant lovers, plant happiness.</p></div>
+        <div><h4>Links</h4><a href="index.html">Home</a><br/><a href="shop.html">Shop</a></div>
+        <div><h4>Subscribe</h4><form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="you@plantmail.com" required /><button class="btn small">Subscribe</button><p id="newsletterMsg" class="muted"></p></form></div>
+      </div>
+      <p class="muted">© <span id="year"></span> GreenCart</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+  <script>
+    if (window.initShop) initShop();
+  </script>
+</body>
+</html>

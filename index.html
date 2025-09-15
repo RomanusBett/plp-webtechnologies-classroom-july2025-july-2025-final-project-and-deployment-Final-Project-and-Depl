@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenCart — Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🌿 <span>GreenCart</span></a>
+
+      <button id="mobileMenuToggle" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav id="mainNav" class="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="cart.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="reveal">Bring life into your space</h1>
+          <p class="reveal delay-1">Buy easy-care houseplants, herbs and blooms. Fast shipping, happy plants.</p>
+          <p>
+            <a class="btn primary" href="shop.html">Shop Plants 🌱</a>
+            <a class="btn ghost" href="#categories">Explore categories</a>
+          </p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="plant-illustration animate-sway"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section container">
+      <h2>Popular categories</h2>
+      <div class="grid categories-grid">
+        <article class="card category-card">
+          <div class="category-art succulents"></div>
+          <h3>Succulents</h3>
+          <p>Low-water plants perfect for busy homes.</p>
+          <a class="btn small" href="shop.html?cat=Succulents">Browse</a>
+        </article>
+
+        <article class="card category-card">
+          <div class="category-art herbs"></div>
+          <h3>Herbs</h3>
+          <p>Grow fresh basil, mint & more in your kitchen.</p>
+          <a class="btn small" href="shop.html?cat=Herbs">Browse</a>
+        </article>
+
+        <article class="card category-card">
+          <div class="category-art flowers"></div>
+          <h3>Flowers</h3>
+          <p>Colorful blooms to brighten any room.</p>
+          <a class="btn small" href="shop.html?cat=Flowers">Browse</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Featured plants</h2>
+      <div id="featuredGrid" class="grid product-grid">
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>How it works</h2>
+      <div class="grid steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Choose a plant</h4>
+          <p>Find plants by category or use search.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Add to cart</h4>
+          <p>Quick add button & simple cart management.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Enjoy growing</h4>
+          <p>Care tips included with each plant.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <h4>GreenCart</h4>
+          <p>Plant lovers, plant happiness.</p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <a href="index.html">Home</a><br/>
+          <a href="shop.html">Shop</a><br/>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <form id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="you@plantmail.com" required />
+            <button class="btn small">Subscribe</button>
+            <p id="newsletterMsg" class="muted"></p>
+          </form>
+        </div>
+      </div>
+
+      <p class="muted">© <span id="year"></span> GreenCart — made with 🌱</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+  <script>
+    if (window.renderFeatured) renderFeatured('#featuredGrid', 4);
+  </script>
+</body>
+</html>
