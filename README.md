@@ -51,6 +51,7 @@ You can deploy on GitHub Pages, Netlify, or Vercel.
 
 **Netlify**
 - Drag & drop the project folder to Netlify Drop (or connect repo), and it will deploy a static site. Use build command: none (static).
+- You can find the live link of this project at: https://plp-webtechnologies-classroom-july2-sigma.vercel.app/
 
 **Vercel**
 - Connect repository and deploy as a static site.
